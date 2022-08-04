@@ -9,6 +9,7 @@ use Automattic\Jetpack\Constants;
 use Automattic\WooCommerce\DataBase\Migrations\CustomOrderTable\CLIRunner;
 use Automattic\WooCommerce\Database\Migrations\CustomOrderTable\PostsToOrdersMigrationController;
 use Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableRefundDataStore;
+use Automattic\WooCommerce\Internal\BatchProcessing\BatchProcessingController;
 use Automattic\WooCommerce\Internal\DependencyManagement\AbstractServiceProvider;
 use Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer;
 use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
@@ -48,6 +49,7 @@ class OrdersDataStoreServiceProvider extends AbstractServiceProvider {
 			array(
 				OrdersTableDataStore::class,
 				DataSynchronizer::class,
+				BatchProcessingController::class,
 				OrdersTableRefundDataStore::class,
 			)
 		);
