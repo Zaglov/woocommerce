@@ -873,13 +873,15 @@ class OrdersTableQuery {
 	 * @return void
 	 */
 	private function process_limit(): void {
-		$limit  = ( $this->arg_isset( 'limit' ) ? absint( $this->args['limit'] ) : false );
+		$limit  = ( $this->arg_isset( 'limit' ) ? $this->args['limit'] : false );
 		$page   = ( $this->arg_isset( 'page' ) ? absint( $this->args['page'] ) : 1 );
 		$offset = ( $this->arg_isset( 'offset' ) ? absint( $this->args['offset'] ) : false );
 
-		if ( ! $limit ) {
+		if ( ! $limit || $this->args['limit'] === -1 ) {
 			return;
 		}
+
+		$limit = absint( $limit );
 
 		$this->limits = array( $offset ? $offset : absint( ( $page - 1 ) * $limit ), $limit );
 	}
