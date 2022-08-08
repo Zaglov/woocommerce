@@ -112,7 +112,7 @@ final class OrderUtil {
 	 * @return string Admin url for an order.
 	 */
 	public static function get_order_admin_edit_url( int $order_id ) : string {
-		return wc_get_container()->get( PageController::class )->get_edit_link( $order_id );
+		return wc_get_container()->get( PageController::class )->get_edit_url( $order_id );
 	}
 
 	/**
@@ -121,6 +121,6 @@ final class OrderUtil {
 	 * @return string Link for new order.
 	 */
 	public static function get_order_admin_new_url() : string {
-		return wc_get_container()->get( PageController::class )->get_new_link();
+		return wc_get_container()->get( PageController::class )->get_new_page_url();
 	}
 }
