@@ -651,7 +651,7 @@ WHERE
 		return $wpdb->get_var(
 			$wpdb->prepare(
 				//phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $order_table is hardcoded.
-				"SELECT count(*) FROM $order_table WHERE status = %s",
+				"SELECT count(*) FROM $order_table WHERE status = %s AND type = 'shop_order'",
 				$status
 			)
 		);
