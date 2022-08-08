@@ -646,8 +646,15 @@ WHERE
 	}
 
 	public function get_order_count( $status ) {
-		// TODO: Implement get_order_count() method.
-		return 0;
+		global $wpdb;
+		$order_table = self::get_orders_table_name();
+		return $wpdb->get_var(
+			$wpdb->prepare(
+				//phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $order_table is hardcoded.
+				"SELECT count(*) FROM $order_table WHERE status = %s",
+				$status
+			)
+		);
 	}
 
 	public function get_unpaid_orders( $date ) {
