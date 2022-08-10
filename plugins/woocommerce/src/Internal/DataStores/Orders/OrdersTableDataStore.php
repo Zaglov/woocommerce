@@ -1399,11 +1399,9 @@ LEFT JOIN {$operational_data_clauses['join']}
 	}
 
 	public function set_coupon_held_keys( $order, $held_keys, $held_keys_for_user ) {
-		throw new \Exception( 'Unimplemented' );
 	}
 
 	public function release_held_coupons( $order, $save = true ) {
-		throw new \Exception( 'Unimplemented' );
 	}
 
 	public function query( $query_vars ) {
