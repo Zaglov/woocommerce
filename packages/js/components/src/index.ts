@@ -36,7 +36,7 @@ export { default as SearchListControl } from './search-list-control';
 export { default as SearchListItem } from './search-list-control/item';
 export { default as SectionHeader } from './section-header';
 export { default as SegmentedSelection } from './segmented-selection';
-export { default as SelectControl } from './select-control';
+export { default as DeprecatedSelectControl } from './deprecated-select-control';
 export { default as ScrollTo } from './scroll-to';
 export { default as Spinner } from './spinner';
 export { default as Stepper } from './stepper';
