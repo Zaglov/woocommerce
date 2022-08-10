@@ -18,9 +18,11 @@ test.describe( 'Store owner can complete onboarding wizard', () => {
 		// Fill store's address - second line
 		await page.fill( '#inspector-text-control-1', 'addr 2' );
 		// Type the requested country/region
-		await page.click( '#woocommerce-select-control-0__control-input' );
+		await page.click(
+			'#woocommerce-deprecated-select-control-0__control-input'
+		);
 		await page.fill(
-			'#woocommerce-select-control-0__control-input',
+			'#woocommerce-deprecated-select-control-0__control-input',
 			'United States (US) — California'
 		);
 		await page.click( 'button >> text=United States (US) — California' );
@@ -105,15 +107,25 @@ test.describe( 'Store owner can complete onboarding wizard', () => {
 		);
 		expect( pageHeading ).toContain( 'Tell us about your business' );
 		// Select 1 - 10 for products
-		await page.click( '#woocommerce-select-control-0__control-input', {
-			force: true,
-		} );
-		await page.click( '#woocommerce-select-control__option-0-1-10' );
+		await page.click(
+			'#woocommerce-deprecated-select-control-0__control-input',
+			{
+				force: true,
+			}
+		);
+		await page.click(
+			'#woocommerce-deprecated-select-control__option-0-1-10'
+		);
 		// Select No for selling elsewhere
-		await page.click( '#woocommerce-select-control-1__control-input', {
-			force: true,
-		} );
-		await page.click( '#woocommerce-select-control__option-1-no' );
+		await page.click(
+			'#woocommerce-deprecated-select-control-1__control-input',
+			{
+				force: true,
+			}
+		);
+		await page.click(
+			'#woocommerce-deprecated-select-control__option-1-no'
+		);
 		await page.click( 'button >> text=Continue' );
 	} );
 
@@ -171,9 +183,11 @@ test.describe(
 			);
 			await page.fill( '#inspector-text-control-0', 'addr 1' );
 			await page.fill( '#inspector-text-control-1', 'addr 2' );
-			await page.click( '#woocommerce-select-control-0__control-input' );
+			await page.click(
+				'#woocommerce-deprecated-select-control-0__control-input'
+			);
 			await page.fill(
-				'#woocommerce-select-control-0__control-input',
+				'#woocommerce-deprecated-select-control-0__control-input',
 				'Malta'
 			);
 			await page.click( 'button >> text=Malta' );
@@ -280,9 +294,11 @@ test.describe( 'Store owner can go through setup Task List', () => {
 		);
 		await page.fill( '#inspector-text-control-0', 'addr 1' );
 		await page.fill( '#inspector-text-control-1', 'addr 2' );
-		await page.click( '#woocommerce-select-control-0__control-input' );
+		await page.click(
+			'#woocommerce-deprecated-select-control-0__control-input'
+		);
 		await page.fill(
-			'#woocommerce-select-control-0__control-input',
+			'#woocommerce-deprecated-select-control-0__control-input',
 			'United States (US) — California'
 		);
 		await page.click( 'button >> text=United States (US) — California' );
